@@ -4,6 +4,7 @@ import (
   "io"
   "log"
   "os"
+  "path/filepath"
 )
 
 func FileExists(path string) bool {
@@ -34,6 +35,16 @@ func DirMustExist(dir string) {
   }
 }
 
+func CreateDir(dir string) {
+  err := os.MkdirAll(dir, 0755)
+  CheckError(err)
+}
+
+func createDirForFile(path string) {
+  dir, _ := filepath.Split(path)
+  CreateDir(dir)
+}
+
 func CheckError(err error) {
   if err != nil {
     log.Fatal(err)
@@ -44,6 +55,18 @@ func CreateFile(path string) *os.File {
   file, err := os.Create(path)
   CheckError(err)
   return file
+}
+
+// The B suffix means "byte".
+func ReadFileB(path string) []byte {
+  b, err := os.ReadFile(path)
+  CheckError(err)
+  return b
+}
+
+// The S suffix means "string".
+func ReadFileS(path string) string {
+  return string(ReadFileB(path))
 }
 
 // Got this from https://stackoverflow.com/questions/21060945/simple-way-to-copy-a-file
