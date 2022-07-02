@@ -40,7 +40,7 @@ func CreateDir(dir string) {
   CheckError(err)
 }
 
-func createDirForFile(path string) {
+func CreateDirForFile(path string) {
   dir, _ := filepath.Split(path)
   CreateDir(dir)
 }
