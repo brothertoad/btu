@@ -57,6 +57,12 @@ func CreateFile(path string) *os.File {
   return file
 }
 
+func OpenFile(path string) *os.File {
+  file, err := os.Open(path)
+  CheckError(err)
+  return file
+}
+
 // The B suffix means "byte".
 func ReadFileB(path string) []byte {
   b, err := os.ReadFile(path)
