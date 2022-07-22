@@ -1,5 +1,17 @@
 # Change Log
 
+## [1.2.1] - 2022-07-21
+
+### Changed
+- Corrected name in license.
+
+### Added
+
+### Removed
+
+### Fixed
+- Format of logging.
+
 ## [1.2.0] - 2022-07-10
 
 ### Changed
