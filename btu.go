@@ -13,7 +13,7 @@ func FileExists(path string) bool {
     return false
   }
   if !fileInfo.Mode().IsRegular() {
-    log.Fatal("%s exists, but is not a file\n", path)
+    log.Fatalf("%s exists, but is not a file\n", path)
   }
   return true
 }
@@ -24,14 +24,14 @@ func DirExists(dir string) bool {
     return false
   }
   if !fileInfo.IsDir() {
-    log.Fatal("%s exists, but is not a directory\n", dir)
+    log.Fatalf("%s exists, but is not a directory\n", dir)
   }
   return true
 }
 
 func DirMustExist(dir string) {
   if !DirExists(dir) {
-    log.Fatal("Directory %s does not exist\n", dir)
+    log.Fatalf("Directory %s does not exist\n", dir)
   }
 }
 
