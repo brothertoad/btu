@@ -1,5 +1,18 @@
 # Change Log
 
+## [1.3.0] - 2022-09-02
+
+### Changed
+
+### Added
+- SetLogLevelByName function
+- TRACE log level
+
+### Removed
+
+### Fixed
+- Fixed a typo in a comment.
+
 ## [1.2.1] - 2022-07-21
 
 ### Changed
