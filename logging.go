@@ -70,3 +70,7 @@ func Info(msg string, a ...any) {
 func Debug(msg string, a ...any) {
   logMsg(DEBUG, msg, a...)
 }
+
+func Trace(msg string, a ...any) {
+  logMsg(TRACE, msg, a...)
+}
