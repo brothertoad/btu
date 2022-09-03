@@ -77,7 +77,7 @@ func ReadFileS(path string) string {
 
 // Got this from https://stackoverflow.com/questions/21060945/simple-way-to-copy-a-file
 // Copy the src file to dst. Any existing file will be overwritten and the file
-// attributes will not be copied.  Note that like al the other functions in this
+// attributes will not be copied.  Note that like all the other functions in this
 // module, an error is fatal to the calling program.
 func CopyFile(src, dst string) {
     in, err := os.Open(src)
