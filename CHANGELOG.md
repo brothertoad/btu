@@ -1,5 +1,19 @@
 # Change Log
 
+## [1.4.0] - 2023-05-04
+
+### Changed
+- Allow any positive number to be used as a log level.
+- Allow a number to be passed in string format to SetLogLevelByName.
+
+### Added
+- Log function
+- IsDir function
+
+### Removed
+
+### Fixed
+
 ## [1.3.0] - 2022-09-02
 
 ### Changed

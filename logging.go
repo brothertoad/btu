@@ -3,6 +3,7 @@ package btu
 import (
   "log"
   "os"
+  "strconv"
   "strings"
 )
 
@@ -13,13 +14,12 @@ const INFO  = 4
 const DEBUG = 5
 const TRACE = 6
 const minLevel = FATAL
-const maxLevel = TRACE
 
 var logLevel = ERROR
 
 func SetLogLevel(level int) {
-  if level < minLevel || level > maxLevel {
-    log.Fatalf("log level %s is out of range (valid range is %d to %d)\n", level, minLevel, maxLevel)
+  if level < minLevel {
+    log.Fatalf("log level %s is out of range, must be at least %d)\n", level, minLevel)
   }
   logLevel = level
 }
@@ -40,7 +40,10 @@ func SetLogLevelByName(name string) {
   case "trace":
     SetLogLevel(TRACE)
   default:
-    Fatal("Invalid name '%s' for log level\n", name)
+    // try to convert to a number
+    level, err := strconv.Atoi(name)
+    CheckError(err)
+    SetLogLevel(level)
   }
 }
 
@@ -48,6 +51,11 @@ func logMsg(level int, msg string, a ...any) {
   if level <= logLevel {
     log.Printf(msg, a...)
   }
+}
+
+// An exported version of logMsg.
+func Log(level int, msg string, a ...any) {
+  logMsg(level, msg, a...)
 }
 
 func Fatal(msg string, a ...any) {
