@@ -29,6 +29,15 @@ func DirExists(dir string) bool {
   return true
 }
 
+// Like the above, but doesn't fatal out if the path is a regular file.
+func IsDir(dir string) bool {
+  fileInfo, err := os.Stat(dir)
+  if err != nil {
+    return false
+  }
+  return fileInfo.IsDir()
+}
+
 func DirMustExist(dir string) {
   if !DirExists(dir) {
     log.Fatalf("Directory %s does not exist\n", dir)
