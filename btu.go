@@ -5,6 +5,7 @@ import (
   "log"
   "os"
   "path/filepath"
+  "strconv"
 )
 
 func FileExists(path string) bool {
@@ -100,4 +101,10 @@ func CopyFile(src, dst string) {
     _, err = io.Copy(out, in)
     CheckError(err)
     out.Close()
+}
+
+func Atoi(a string) int {
+  j, err := strconv.Atoi(a)
+  CheckError(err)
+  return j
 }
