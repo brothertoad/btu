@@ -3,7 +3,6 @@ package btu
 import (
   "log"
   "os"
-  "strconv"
   "strings"
 )
 
@@ -40,10 +39,7 @@ func SetLogLevelByName(name string) {
   case "trace":
     SetLogLevel(TRACE)
   default:
-    // try to convert to a number
-    level, err := strconv.Atoi(name)
-    CheckError(err)
-    SetLogLevel(level)
+    SetLogLevel(Atoi(name))
   }
 }
 
