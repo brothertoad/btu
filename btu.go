@@ -6,6 +6,7 @@ import (
   "os"
   "path/filepath"
   "strconv"
+  "strings"
 )
 
 func FileExists(path string) bool {
@@ -83,6 +84,12 @@ func ReadFileB(path string) []byte {
 // The S suffix means "string".
 func ReadFileS(path string) string {
   return string(ReadFileB(path))
+}
+
+// The L suffix means "lines".
+func ReadFileL(path string) []string {
+  s := ReadFileS(path)
+  return strings.Split(s, "\n")
 }
 
 // Got this from https://stackoverflow.com/questions/21060945/simple-way-to-copy-a-file
