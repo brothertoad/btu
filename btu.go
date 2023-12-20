@@ -62,6 +62,12 @@ func CheckError(err error) {
   }
 }
 
+func CheckError2(err error, msg string, a ...any) {
+  if err != nil {
+    Fatal(msg, a...)
+  }
+}
+
 func CreateFile(path string) *os.File {
   file, err := os.Create(path)
   CheckError(err)
