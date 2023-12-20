@@ -1,6 +1,7 @@
 package btu
 
 import (
+  "fmt"
   "io"
   "log"
   "os"
@@ -64,7 +65,8 @@ func CheckError(err error) {
 
 func CheckError2(err error, msg string, a ...any) {
   if err != nil {
-    Fatal(msg, a...)
+    m := fmt.Sprintf(msg, a...)
+    Fatal("%s\n%s\n", m, err.Error())
   }
 }
 
