@@ -123,3 +123,9 @@ func Atoi(a string) int {
   CheckError(err)
   return j
 }
+
+func Atoi2(s string, msg string, a ...any) int {
+  j, err := strconv.Atoi(s)
+  CheckError2(err, msg, a...)
+  return j
+}
