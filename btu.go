@@ -129,3 +129,9 @@ func Atoi2(s string, msg string, a ...any) int {
   CheckError2(err, msg, a...)
   return j
 }
+
+func ParseInt64(s string, msg string, a ...any) int64 {
+  j, err := strconv.ParseInt(s, 10, 64)
+  CheckError2(err, msg, a...)
+  return j
+}
