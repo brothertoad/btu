@@ -135,3 +135,9 @@ func ParseInt64(s string, msg string, a ...any) int64 {
   CheckError2(err, msg, a...)
   return j
 }
+
+func ParseFloat64(s string, msg string, a ...any) float64 {
+  f, err := strconv.ParseFloat(s, 64)
+  CheckError2(err, msg, a...)
+  return f
+}
