@@ -1,5 +1,24 @@
 # Change Log
 
+## [1.5.0] - 2025-05-12
+
+### Changed
+- More robust error checking in SetLogLevelByName.
+
+### Added
+- CheckError2 function
+- ReadFileL function
+- Atoi function
+- Atoi2 function
+- ParseInt64 function
+- ParseFloat64 function
+- GetNumberOrQuit function
+- GetResponse function
+
+### Removed
+
+### Fixed
+
 ## [1.4.0] - 2023-05-04
 
 ### Changed
